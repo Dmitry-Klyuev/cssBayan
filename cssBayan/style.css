@@ -1,61 +1,57 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
-input {
-    position: absolute;
-    height: 0;
-    width: 0;
-}
-h1 {
-    margin: 10px;
-}
-body{
+
+body {
     background-color: #f6ede1;
 }
-.bayan{
-    max-width: 70vw;
-    margin: 0 auto;
+
+.bayan {
+    margin: 15px auto 0 auto;
+    max-width: 60%;
 }
-.collapsible-accordion {
-    margin: 10px;
-    overflow: hidden;
+.bayan h1{
+    margin-bottom: 20px;
 }
-.collapsible-item-label {
+
+.accordion li {
+    border-top: 1px solid grey;
+    min-height: 45px;
+    list-style: none;
+}
+.accordion li label{
+    padding: 25px;
     display: flex;
     justify-content: space-between;
-    padding: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    border-top: 1px solid black;
 }
-.bayan .collapsible-item-label::after {
-    position: relative;
-    content: "\002B";
-    width: 1em;
-    height: 1em;
-    text-align: center;
-    transition: all .5s;
-}
-.collapsible-item svg{
-    font-size: 13px;
 
+.accordion li span img {
+    width: 14px;
+    transition: all ease-in-out .2s;
 }
-.collapsible-item-content {
-    max-height: 0;
-    padding: 0 1em;
-    transition: all 0.35s;
+
+.accordion [type="checkbox"] {
+    display: none;
 }
-.collapsible-item-content img{
-    display: block;
-    margin: 0 auto;
-    width: 60%;
+
+.content {
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: all ease-in-out .7s;
 }
-input:checked + .collapsible-item-label::after {
-    transform: rotate(45deg);
+
+input:hover + .content {
+    height: 100%;
+    visibility: visible;
 }
-input:checked ~ .collapsible-item-content {
-    max-height: 100vh;
-    padding: 1em;
+input:checked + .content {
+    height: 100%;
+    visibility: visible;
+    transition: all ease-in-out .7s;
 }
+
